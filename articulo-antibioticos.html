@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antibióticos betalactámicos: mecanismo y resistencias — Medifácil</title>
+  <meta name="description" content="Desde la inhibición de la pared bacteriana hasta las betalactamasas de espectro extendido. Todo lo que necesitás saber para el final." />
+
+  <!-- Google AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root { --navy:#0d1f3c; --navy-mid:#162d52; --teal:#0f7c6e; --teal-lt:#13a492; --gold:#c9a84c; --cream:#f7f3ee; --paper:#fdfaf6; --ink:#1a1a2e; --muted:#6b7280; --border:#e2d9ce; --shadow:rgba(13,31,60,.12); }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Serif 4', Georgia, serif; background: var(--paper); color: var(--ink); line-height: 1.8; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    header { position: sticky; top: 0; z-index: 100; background: var(--navy); border-bottom: 3px solid var(--gold); padding: 0 2rem; }
+    nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 900; color: #fff; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: 'JetBrains Mono', monospace; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.75); transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--teal); color: #fff !important; padding: .45rem 1.1rem; border-radius: 4px; }
+    .article-hero { background: var(--navy); padding: 4rem 2rem 3rem; position: relative; overflow: hidden; }
+    .article-hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+    .article-hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+    .breadcrumb { font-family: 'JetBrains Mono', monospace; font-size: .7rem; letter-spacing: .08em; color: rgba(255,255,255,.45); margin-bottom: 1.2rem; }
+    .breadcrumb a { color: var(--teal-lt); }
+    .article-cat { display: inline-block; background: var(--gold); color: var(--navy); font-family: 'JetBrains Mono', monospace; font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 3px; margin-bottom: 1.2rem; font-weight: 500; }
+    .article-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: 1rem; }
+    .article-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: rgba(255,255,255,.5); letter-spacing: .06em; }
+    .article-layout { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: start; }
+    .article-sidebar { position: sticky; top: 90px; }
+    .toc { background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--teal); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .toc-title { font-family: 'JetBrains Mono', monospace; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; font-weight: 500; }
+    .toc ol { padding-left: 1.2rem; display: flex; flex-direction: column; gap: .4rem; }
+    .toc a { font-size: .9rem; color: var(--muted); transition: color .2s; }
+    .toc a:hover, .toc a.active { color: var(--teal); font-weight: 600; }
+    .sidebar-ad { background: var(--cream); border: 2px dashed var(--border); border-radius: 8px; height: 250px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: .65rem; color: var(--muted); text-align: center; padding: 1rem; margin-bottom: 2rem; }
+    .article-content { font-size: 1.05rem; }
+    .article-content h2 { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--navy); }
+    .article-content h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; margin: 1.8rem 0 .8rem; }
+    .article-content p { margin-bottom: 1.2rem; }
+    .article-content ul, .article-content ol { padding-left: 1.5rem; margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: .4rem; }
+    .article-content strong { color: var(--navy); font-weight: 600; }
+    .callout { border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1.8rem 0; border-left: 4px solid; }
+    .callout-key { background: rgba(15,124,110,.07); border-color: var(--teal); }
+    .callout-warning { background: rgba(201,168,76,.08); border-color: var(--gold); }
+    .callout-danger { background: rgba(220,38,38,.06); border-color: #dc2626; }
+    .callout-title { font-family: 'JetBrains Mono', monospace; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; margin-bottom: .5rem; }
+    .callout-key .callout-title { color: var(--teal); }
+    .callout-warning .callout-title { color: #a07820; }
+    .callout-danger .callout-title { color: #dc2626; }
+    .callout p { margin: 0; font-size: .95rem; }
+    .article-table { width: 100%; border-collapse: collapse; margin: 1.8rem 0; font-size: .88rem; }
+    .article-table th { background: var(--navy); color: #fff; padding: .7rem 1rem; text-align: left; font-family: 'JetBrains Mono', monospace; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; }
+    .article-table td { padding: .7rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+    .article-table tr:nth-child(even) td { background: var(--cream); }
+    .adsense-in-content { background: var(--cream); border: 2px dashed var(--border); border-radius: 8px; height: 90px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: .68rem; color: var(--muted); margin: 2.5rem 0; }
+    .references { background: var(--cream); border: 1px solid var(--border); border-radius: 8px; padding: 1.8rem; margin-top: 3rem; }
+    .references h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1rem; }
+    .references ol { padding-left: 1.4rem; display: flex; flex-direction: column; gap: .6rem; }
+    .references li { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+    .references li cite { font-style: italic; }
+    .author-box { background: var(--navy); color: #fff; border-radius: 10px; padding: 1.8rem; margin-top: 2.5rem; display: flex; gap: 1.5rem; align-items: center; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; border: 2px solid var(--gold); }
+    .author-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: .2rem; }
+    .author-bio { font-size: .85rem; color: rgba(255,255,255,.65); font-weight: 300; line-height: 1.6; }
+    footer { background: #080e1c; color: rgba(255,255,255,.45); padding: 2.5rem 2rem; font-size: .85rem; margin-top: 4rem; }
+    .footer-bottom-simple { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; color: #fff; }
+    .footer-logo span { color: var(--gold); }
+    .footer-disclaimer { font-family: 'JetBrains Mono', monospace; font-size: .62rem; background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.2); color: rgba(201,168,76,.7); padding: .4rem .8rem; border-radius: 4px; }
+    @media (max-width: 900px) { .article-layout { grid-template-columns: 1fr; } .article-sidebar { position: static; } }
+    @media (max-width: 600px) { .nav-links li:not(:last-child) { display: none; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">Medi<span>fácil</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#articulos">Artículos</a></li>
+      <li><a href="index.html#tienda">Tienda</a></li>
+      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="index.html#newsletter" class="nav-cta">Suscribirse</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Inicio</a> › <a href="index.html#articulos">Artículos</a> › Farmacología</p>
+    <span class="article-cat">Farmacología</span>
+    <h1>Antibióticos betalactámicos: mecanismo y resistencias</h1>
+    <div class="article-meta">
+      <span>📅 28 de febrero de 2026</span>
+      <span>⏱ 10 min de lectura</span>
+      <span>🏥 Farmacología / Infectología</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-layout">
+  <main class="article-main">
+    <div class="article-content">
+
+      <p>Los antibióticos betalactámicos son la familia más amplia y utilizada en la clínica. Su nombre proviene del anillo betalactámico, una estructura de cuatro átomos que es tanto su principio activo como su talón de Aquiles. Comprender su mecanismo de acción y los mecanismos de resistencia bacteriana es fundamental para la práctica clínica diaria.</p>
+
+      <h2 id="mecanismo">1. Mecanismo de acción</h2>
+      <p>Los betalactámicos actúan inhibiendo la síntesis de la pared celular bacteriana, que está compuesta por peptidoglucano. El proceso:</p>
+      <ol>
+        <li>El antibiótico se une de forma covalente a las <strong>proteínas fijadoras de penicilina (PBP, Penicillin-Binding Proteins)</strong>, que son transpeptidasas y carboxipeptidasas esenciales para el entrecruzamiento del peptidoglucano.</li>
+        <li>Al inhibir las PBP, se interrumpe la síntesis de la pared celular.</li>
+        <li>La bacteria, incapaz de mantener su integridad osmótica, sufre lisis bacteriana.</li>
+      </ol>
+
+      <div class="callout callout-key">
+        <p class="callout-title">🔑 Concepto clave</p>
+        <p>Los betalactámicos son antibióticos <strong>tiempo-dependientes</strong>: su actividad bactericida depende del tiempo que la concentración libre del fármaco supere la CMI (concentración mínima inhibitoria), no de la concentración máxima alcanzada. Esto justifica la administración en infusión prolongada o en dosis frecuentes.</p>
+      </div>
+
+      <h2 id="clasificacion">2. Clasificación</h2>
+      <table class="article-table">
+        <thead><tr><th>Grupo</th><th>Ejemplos</th><th>Cobertura principal</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Penicilinas</strong></td><td>Amoxicilina, ampicilina, piperacilina</td><td>Gram+, algunas Gram– (amoxicilina-clavulanato amplía espectro)</td></tr>
+          <tr><td><strong>Cefalosporinas 1G</strong></td><td>Cefalexina, cefazolina</td><td>Gram+ (piel, tejidos blandos, profilaxis quirúrgica)</td></tr>
+          <tr><td><strong>Cefalosporinas 2G</strong></td><td>Cefuroxima, cefoxitina</td><td>Gram+ y mayor cobertura Gram– (H. influenzae, Moraxella)</td></tr>
+          <tr><td><strong>Cefalosporinas 3G</strong></td><td>Ceftriaxona, cefotaxima, ceftazidima</td><td>Mayor cobertura Gram– (meningitis, sepsis); ceftazidima cubre Pseudomonas</td></tr>
+          <tr><td><strong>Cefalosporinas 4G</strong></td><td>Cefepima</td><td>Amplio espectro, incluyendo Pseudomonas aeruginosa</td></tr>
+          <tr><td><strong>Carbapenems</strong></td><td>Meropenem, imipenem, ertapenem</td><td>Espectro ultrabroad; reserva para gérmenes MDR</td></tr>
+          <tr><td><strong>Monobactams</strong></td><td>Aztreonam</td><td>Solo Gram– aerobios; útil en alergia a penicilinas</td></tr>
+        </tbody>
+      </table>
+
+      <div class="adsense-in-content">ESPACIO PUBLICITARIO — Google AdSense (in-article)</div>
+
+      <h2 id="resistencias">3. Mecanismos de resistencia</h2>
+      <p>La resistencia a betalactámicos es uno de los mayores problemas de salud pública global. Los mecanismos principales son:</p>
+
+      <h3>Producción de betalactamasas</h3>
+      <p>Es el mecanismo más frecuente. Las bacterias producen enzimas que <strong>hidrolizan el anillo betalactámico</strong>, inactivando el antibiótico antes de que llegue a su diana. Se clasifican según el esquema de Ambler:</p>
+      <ul>
+        <li><strong>Clase A:</strong> incluye las BLEE (betalactamasas de espectro extendido) como CTX-M, TEM, SHV. Destruyen penicilinas y cefalosporinas de 3G y 4G. Son inhibidas por clavulanato, tazobactam y sulbactam.</li>
+        <li><strong>Clase B (metalo-betalactamasas):</strong> NDM, VIM, IMP. Destruyen prácticamente todos los betalactámicos, incluyendo carbapenems. <strong>No son inhibidas por los inhibidores clásicos.</strong></li>
+        <li><strong>Clase C (AmpC):</strong> cefalosporinasas inducibles. Frecuentes en Enterobacter spp., Serratia, Citrobacter. Resistentes a cefalosporinas y a inhibidores de betalactamasas.</li>
+        <li><strong>Clase D (oxacilinasas):</strong> OXA-48 y similares. Confieren resistencia a carbapenems.</li>
+      </ul>
+
+      <div class="callout callout-danger">
+        <p class="callout-title">🚨 Alerta clínica — BLEE</p>
+        <p>Ante una infección grave por enterobacteria productora de BLEE, <strong>no usar cefalosporinas de 3G aunque el antibiograma las muestre sensibles</strong> (efecto inoculo). El tratamiento de elección es un carbapenem (ertapenem o meropenem según gravedad).</p>
+      </div>
+
+      <h3>Alteración de las PBP</h3>
+      <p>La bacteria modifica la estructura de sus PBP para que el antibiótico no pueda unirse. Es el mecanismo de <strong>Staphylococcus aureus resistente a meticilina (SARM)</strong>, que adquiere el gen <em>mecA</em> que codifica la PBP2a, con muy baja afinidad por todos los betalactámicos. El tratamiento de elección para SARM es vancomicina o daptomicina.</p>
+
+      <h3>Reducción de la permeabilidad / bombas de eflujo</h3>
+      <p>Las bacterias Gram– reducen la expresión de porinas (canales de entrada) o activan bombas de eflujo que expulsan el antibiótico activamente. Relevante en <em>Pseudomonas aeruginosa</em> y <em>Acinetobacter baumannii</em>.</p>
+
+      <h2 id="inhibidores">4. Inhibidores de betalactamasas</h2>
+      <p>Se combinan con betalactámicos para recuperar su actividad frente a bacterias productoras de betalactamasas de clase A:</p>
+      <ul>
+        <li><strong>Amoxicilina-clavulanato:</strong> uso ambulatorio (ITU, otitis, sinusitis, mordeduras).</li>
+        <li><strong>Ampicilina-sulbactam:</strong> intrahospitalario; útil en Acinetobacter (el sulbactam tiene actividad intrínseca).</li>
+        <li><strong>Piperacilina-tazobactam (TZP):</strong> amplio espectro hospitalario. Cubre Pseudomonas.</li>
+        <li><strong>Nuevos inhibidores (avibactam, vaborbactam, relebactam):</strong> inhiben también algunas carbapenemasas de clase A y D. Combinados con ceftazidima, cefepima o meropenem para gérmenes XDR.</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <p class="callout-title">⚠️ Alergia a penicilinas</p>
+        <p>La alergia verdadera a penicilinas (mediada por IgE) es menos frecuente de lo que se reporta. La reactividad cruzada con cefalosporinas es &lt; 2%. En alergia leve o dudosa, las cefalosporinas pueden usarse con precaución. Solo ante anafilaxia documentada a penicilinas se consideran contraindicadas.</p>
+      </div>
+
+    </div>
+
+    <div class="references">
+      <h2>Referencias bibliográficas</h2>
+      <ol>
+        <li>Geddes AM, et al. <cite>Introduction: historical perspective and development of amoxicillin/clavulanate.</cite> Int J Antimicrob Agents. 2007;30 Suppl 2:S109–117.</li>
+        <li>Bush K, Bradford PA. <cite>Beta-Lactams and Beta-Lactamase Inhibitors: An Overview.</cite> Cold Spring Harb Perspect Med. 2016;6(8):a025247.</li>
+        <li>Tamma PD, et al. <cite>Infectious Diseases Society of America Guidance on the Treatment of Extended-Spectrum β-lactamase Producing Enterobacterales.</cite> Clin Infect Dis. 2021;72(7):1109–1116.</li>
+        <li>Giedraitienė A, et al. <cite>Antibiotic resistance mechanisms of clinically important bacteria.</cite> Medicina (Kaunas). 2011;47(3):137–146.</li>
+        <li>Torres A, et al. <cite>Ceftazidime-avibactam versus meropenem in nosocomial pneumonia (REPROVE).</cite> Lancet Infect Dis. 2018;18(3):285–295.</li>
+      </ol>
+    </div>
+
+    <div class="author-box">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div>
+        <div class="author-name">Autor — Estudiante de Medicina, 5° año</div>
+        <p class="author-bio">Universidad de la República, Uruguay. Escribo sobre medicina clínica con el lenguaje que me hubiera gustado encontrar cuando empecé a estudiar.</p>
+      </div>
+    </div>
+  </main>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-ad">ESPACIO PUBLICITARIO<br>Google AdSense<br>300×250</div>
+    <div class="toc">
+      <p class="toc-title">Tabla de contenidos</p>
+      <ol>
+        <li><a href="#mecanismo">Mecanismo de acción</a></li>
+        <li><a href="#clasificacion">Clasificación</a></li>
+        <li><a href="#resistencias">Mecanismos de resistencia</a></li>
+        <li><a href="#inhibidores">Inhibidores de betalactamasas</a></li>
+      </ol>
+    </div>
+    <div class="sidebar-ad">ESPACIO PUBLICITARIO<br>Google AdSense<br>300×250</div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-bottom-simple">
+    <a href="index.html" class="footer-logo">Medi<span>fácil</span></a>
+    <div class="footer-disclaimer">⚠️ Contenido educativo — no reemplaza criterio médico profesional</div>
+    <span>© 2026 Medifácil</span>
+  </div>
+</footer>
+
+<script>
+  const headings = document.querySelectorAll('.article-content h2');
+  const tocLinks = document.querySelectorAll('.toc a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    headings.forEach(h => { if (window.scrollY >= h.offsetTop - 120) current = h.id; });
+    tocLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+  });
+</script>
+</body>
+</html>

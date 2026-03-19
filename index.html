@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medifácil — Medicina que se entiende</title>
+  <meta name="description" content="Artículos médicos, resúmenes y recursos para estudiantes de medicina. Aprende con claridad." />
+
+  <!-- Google AdSense — reemplazá ca-pub-XXXXXXXXXXXXXXXX con tu ID real -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy:     #0d1f3c;
+      --navy-mid: #162d52;
+      --teal:     #0f7c6e;
+      --teal-lt:  #13a492;
+      --gold:     #c9a84c;
+      --cream:    #f7f3ee;
+      --paper:    #fdfaf6;
+      --ink:      #1a1a2e;
+      --muted:    #6b7280;
+      --border:   #e2d9ce;
+      --shadow:   rgba(13,31,60,.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Serif 4', Georgia, serif; background: var(--paper); color: var(--ink); line-height: 1.7; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    header { position: sticky; top: 0; z-index: 100; background: var(--navy); border-bottom: 3px solid var(--gold); padding: 0 2rem; }
+    nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 900; color: #fff; letter-spacing: -.5px; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: 'JetBrains Mono', monospace; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.75); transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--teal); color: #fff !important; padding: .45rem 1.1rem; border-radius: 4px; }
+    .nav-cta:hover { background: var(--teal-lt) !important; }
+
+    /* HERO */
+    .hero { background: var(--navy); padding: 5rem 2rem 4rem; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(15,124,110,.25) 0%, transparent 70%); pointer-events: none; }
+    .hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+    .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; position: relative; z-index: 1; }
+    .hero-tag { font-family: 'JetBrains Mono', monospace; font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 1rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.12; color: #fff; margin-bottom: 1.4rem; }
+    .hero h1 em { color: var(--gold); font-style: italic; }
+    .hero-desc { color: rgba(255,255,255,.7); font-size: 1.1rem; font-weight: 300; margin-bottom: 2rem; max-width: 480px; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.8rem; border-radius: 5px; font-family: 'JetBrains Mono', monospace; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 500; cursor: pointer; transition: all .2s; border: 2px solid transparent; }
+    .btn-primary { background: var(--teal); color: #fff; }
+    .btn-primary:hover { background: var(--teal-lt); }
+    .btn-outline { border-color: var(--gold); color: var(--gold); }
+    .btn-outline:hover { background: var(--gold); color: var(--navy); }
+    .hero-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 2rem; backdrop-filter: blur(8px); }
+    .hero-card-label { font-family: 'JetBrains Mono', monospace; font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 1rem; }
+    .hero-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .hero-stat { background: rgba(255,255,255,.05); border-radius: 8px; padding: 1.2rem; border: 1px solid rgba(255,255,255,.07); }
+    .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold); }
+    .hero-stat-label { font-size: .8rem; color: rgba(255,255,255,.55); margin-top: .2rem; }
+    .hero-badge { margin-top: 1.2rem; background: rgba(15,124,110,.2); border: 1px solid var(--teal); border-radius: 6px; padding: .8rem 1rem; font-size: .85rem; color: rgba(255,255,255,.8); }
+    .hero-badge strong { color: var(--teal-lt); }
+
+    /* ADSENSE */
+    .adsense-banner { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1rem 2rem; text-align: center; }
+    .adsense-placeholder { max-width: 728px; margin: 0 auto; height: 90px; border: 2px dashed var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: var(--muted); letter-spacing: .05em; }
+    .adsense-inline { max-width: 1200px; margin: 0 auto 2rem; padding: 0 2rem; }
+    .adsense-rect { background: var(--cream); border: 2px dashed var(--border); border-radius: 8px; height: 250px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: var(--muted); letter-spacing: .05em; }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-header { margin-bottom: 3rem; }
+    .section-tag { font-family: 'JetBrains Mono', monospace; font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; color: var(--teal); margin-bottom: .6rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.2; }
+    .section-sub { color: var(--muted); margin-top: .6rem; font-size: 1.05rem; font-weight: 300; }
+
+    /* ARTICLES */
+    #articulos { background: var(--paper); }
+    .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+    .article-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+    .article-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px var(--shadow); }
+    .card-img { height: 180px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .card-img-1 { background: linear-gradient(135deg, #0d1f3c 0%, #0f7c6e 100%); }
+    .card-img-2 { background: linear-gradient(135deg, #1a1a2e 0%, #162d52 100%); }
+    .card-img-3 { background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); }
+    .card-emoji { font-size: 3rem; }
+    .card-cat { position: absolute; top: 1rem; left: 1rem; background: var(--gold); color: var(--navy); font-family: 'JetBrains Mono', monospace; font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; padding: .25rem .6rem; border-radius: 3px; font-weight: 500; }
+    .card-body { padding: 1.5rem; }
+    .card-meta { font-family: 'JetBrains Mono', monospace; font-size: .67rem; color: var(--muted); letter-spacing: .06em; margin-bottom: .7rem; }
+    .card-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; line-height: 1.3; margin-bottom: .7rem; }
+    .card-excerpt { font-size: .9rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
+    .card-read { display: inline-block; margin-top: 1.2rem; font-family: 'JetBrains Mono', monospace; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); font-weight: 500; transition: color .2s; }
+    .card-read:hover { color: var(--teal-lt); }
+
+    /* SHOP */
+    #tienda { background: var(--cream); }
+    .shop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.8rem; }
+    .shop-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: transform .25s, box-shadow .25s; cursor: pointer; }
+    .shop-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px var(--shadow); }
+    .shop-thumb { height: 140px; display: flex; align-items: center; justify-content: center; font-size: 2.4rem; }
+    .shop-thumb-1 { background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%); }
+    .shop-thumb-2 { background: linear-gradient(135deg, #1a1a2e 0%, #c9a84c 100%); }
+    .shop-thumb-3 { background: linear-gradient(135deg, #0f7c6e 0%, #162d52 100%); }
+    .shop-thumb-4 { background: linear-gradient(135deg, #0d1f3c 0%, #6b48b3 100%); }
+    .shop-body { padding: 1.3rem; }
+    .shop-badge { display: inline-block; background: rgba(15,124,110,.1); color: var(--teal); font-family: 'JetBrains Mono', monospace; font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; padding: .2rem .6rem; border-radius: 3px; margin-bottom: .7rem; }
+    .shop-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; line-height: 1.3; }
+    .shop-desc { font-size: .85rem; color: var(--muted); font-weight: 300; margin-bottom: 1rem; }
+    .shop-footer { display: flex; align-items: center; justify-content: space-between; }
+    .shop-price { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--navy); }
+    .shop-price span { font-size: .75rem; font-family: 'JetBrains Mono', monospace; color: var(--muted); font-weight: 400; }
+    .btn-buy { background: var(--teal); color: #fff; border: none; border-radius: 5px; padding: .45rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; transition: background .2s; }
+    .btn-buy:hover { background: var(--teal-lt); }
+
+    /* ABOUT */
+    #sobre-mi { background: var(--navy); color: #fff; }
+    .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; }
+    .about-avatar { width: 100%; aspect-ratio: 1; max-width: 300px; border-radius: 12px; background: linear-gradient(135deg, var(--teal) 0%, var(--navy-mid) 100%); display: flex; align-items: center; justify-content: center; font-size: 5rem; border: 3px solid var(--gold); }
+    .about-text .section-tag { color: var(--teal-lt); }
+    .about-text .section-title { color: #fff; }
+    .about-text p { color: rgba(255,255,255,.72); font-weight: 300; margin-top: 1rem; font-size: 1rem; line-height: 1.8; }
+    .about-chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
+    .chip { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.8); font-family: 'JetBrains Mono', monospace; font-size: .7rem; letter-spacing: .06em; padding: .35rem .85rem; border-radius: 20px; }
+
+    /* NEWSLETTER */
+    #newsletter { background: var(--teal); padding: 4rem 2rem; text-align: center; }
+    #newsletter h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #fff; margin-bottom: .8rem; }
+    #newsletter p { color: rgba(255,255,255,.8); margin-bottom: 2rem; }
+    .newsletter-form { display: flex; gap: .8rem; max-width: 480px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .newsletter-input { flex: 1; min-width: 220px; padding: .8rem 1.2rem; border: none; border-radius: 5px; font-family: 'Source Serif 4', serif; font-size: .95rem; outline: none; }
+    .newsletter-btn { background: var(--navy); color: #fff; border: none; border-radius: 5px; padding: .8rem 1.6rem; font-family: 'JetBrains Mono', monospace; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: background .2s; }
+    .newsletter-btn:hover { background: var(--navy-mid); }
+
+    /* FOOTER */
+    footer { background: #080e1c; color: rgba(255,255,255,.45); padding: 3rem 2rem 2rem; font-size: .85rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: .8rem; }
+    .footer-logo span { color: var(--gold); }
+    .footer-desc { line-height: 1.7; max-width: 260px; }
+    .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .footer-col a { color: rgba(255,255,255,.45); transition: color .2s; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-disclaimer { font-family: 'JetBrains Mono', monospace; font-size: .65rem; letter-spacing: .05em; background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.2); color: rgba(201,168,76,.7); padding: .5rem 1rem; border-radius: 4px; max-width: 600px; }
+
+    /* MODAL */
+    .modal-overlay { position: fixed; inset: 0; z-index: 999; background: rgba(8,14,28,.85); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .3s; }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal { background: var(--paper); border-radius: 12px; max-width: 560px; width: 90%; padding: 2.5rem; border-top: 4px solid var(--gold); transform: translateY(20px); transition: transform .3s; position: relative; }
+    .modal-overlay.open .modal { transform: translateY(0); }
+    .modal h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: .5rem; }
+    .modal p { color: var(--muted); margin-bottom: 1.5rem; font-weight: 300; }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--muted); }
+    .modal-price-box { background: var(--cream); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .modal-price-label { font-size: .85rem; color: var(--muted); }
+    .modal-price-val { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--navy); }
+    .modal-btn { width: 100%; padding: 1rem; background: var(--teal); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; transition: background .2s; }
+    .modal-btn:hover { background: var(--teal-lt); }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .nav-links li:not(:last-child) { display: none; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp .6s ease both; }
+    .delay-1 { animation-delay: .15s; }
+    .delay-2 { animation-delay: .3s; }
+    .delay-3 { animation-delay: .45s; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">Medi<span>fácil</span></a>
+    <ul class="nav-links">
+      <li><a href="#articulos">Artículos</a></li>
+      <li><a href="#tienda">Tienda</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#newsletter" class="nav-cta">Suscribirse</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-tag fade-up">Medicina · Uruguay · Recursos académicos</p>
+      <h1 class="fade-up delay-1">Medicina que <em>se entiende</em> de verdad</h1>
+      <p class="hero-desc fade-up delay-2">Artículos clínicos, resúmenes descargables y recursos para estudiantes de medicina. Escritos por un estudiante de quinto año que conoce tus dudas.</p>
+      <div class="hero-btns fade-up delay-3">
+        <a href="#articulos" class="btn btn-primary">Ver artículos</a>
+        <a href="#tienda" class="btn btn-outline">Comprar resúmenes</a>
+      </div>
+    </div>
+    <div class="hero-card fade-up delay-2">
+      <p class="hero-card-label">📊 Recursos disponibles</p>
+      <div class="hero-stat-grid">
+        <div class="hero-stat"><div class="hero-stat-num">12</div><div class="hero-stat-label">Artículos publicados</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">8</div><div class="hero-stat-label">Resúmenes en tienda</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">5°</div><div class="hero-stat-label">Año de la carrera</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">🇺🇾</div><div class="hero-stat-label">Universidad de la República</div></div>
+      </div>
+      <div class="hero-badge"><strong>Nuevo:</strong> Resumen completo de Semiología Cardiovascular disponible 🫀</div>
+    </div>
+  </div>
+</section>
+
+<div class="adsense-banner">
+  <!-- <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+  <div class="adsense-placeholder">ESPACIO PUBLICITARIO — Google AdSense 728×90</div>
+</div>
+
+<section id="articulos">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-tag">📝 Blog médico</p>
+      <h2 class="section-title">Últimos artículos</h2>
+      <p class="section-sub">Contenido clínico claro, sin rodeos y respaldado en evidencia.</p>
+    </div>
+    <div class="articles-grid">
+      <article class="article-card">
+        <a href="articulo-insuficiencia-cardiaca.html">
+          <div class="card-img card-img-1"><span class="card-emoji">🫀</span><span class="card-cat">Cardiología</span></div>
+          <div class="card-body">
+            <p class="card-meta">12 MAR 2026 · 8 min de lectura</p>
+            <h3 class="card-title">Insuficiencia cardíaca: del fisiopatología al tratamiento</h3>
+            <p class="card-excerpt">Entendé los mecanismos compensatorios del corazón fallido y por qué los IECA son la piedra angular del tratamiento.</p>
+            <span class="card-read">Leer artículo →</span>
+          </div>
+        </a>
+      </article>
+      <article class="article-card">
+        <a href="articulo-acv-isquemico.html">
+          <div class="card-img card-img-2"><span class="card-emoji">🧠</span><span class="card-cat">Neurología</span></div>
+          <div class="card-body">
+            <p class="card-meta">5 MAR 2026 · 6 min de lectura</p>
+            <h3 class="card-title">ACV isquémico: ventana terapéutica y trombólisis</h3>
+            <p class="card-excerpt">Las primeras horas son cruciales. Repasamos los criterios de elegibilidad para rtPA y el protocolo de actuación urgente.</p>
+            <span class="card-read">Leer artículo →</span>
+          </div>
+        </a>
+      </article>
+      <article class="article-card">
+        <a href="articulo-antibioticos.html">
+          <div class="card-img card-img-3"><span class="card-emoji">💊</span><span class="card-cat">Farmacología</span></div>
+          <div class="card-body">
+            <p class="card-meta">28 FEB 2026 · 10 min de lectura</p>
+            <h3 class="card-title">Antibióticos betalactámicos: mecanismo y resistencias</h3>
+            <p class="card-excerpt">Desde la inhibición de la pared bacteriana hasta las betalactamasas de espectro extendido. Todo lo que necesitás saber para el final.</p>
+            <span class="card-read">Leer artículo →</span>
+          </div>
+        </a>
+      </article>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="#" class="btn btn-outline" style="border-color:var(--navy); color:var(--navy);">Ver todos los artículos</a>
+    </div>
+  </div>
+</section>
+
+<div class="adsense-inline">
+  <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+  <div class="adsense-rect">ESPACIO PUBLICITARIO — Google AdSense 300×250</div>
+</div>
+
+<section id="tienda">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-tag">🛒 Tienda de resúmenes</p>
+      <h2 class="section-title">Resúmenes descargables</h2>
+      <p class="section-sub">PDFs optimizados para estudiar. Compactos, visuales y con lo que realmente entra en el examen.</p>
+    </div>
+    <div class="shop-grid">
+      <div class="shop-card" onclick="openModal('Semiología Cardiovascular','UYU 250')">
+        <div class="shop-thumb shop-thumb-1">🫀</div>
+        <div class="shop-body">
+          <span class="shop-badge">Más vendido</span>
+          <h3 class="shop-title">Semiología Cardiovascular</h3>
+          <p class="shop-desc">38 páginas. Soplos, maniobras, ECG básico y casos clínicos comentados.</p>
+          <div class="shop-footer"><div class="shop-price">$250 <span>UYU</span></div><button class="btn-buy">Comprar</button></div>
+        </div>
+      </div>
+      <div class="shop-card" onclick="openModal('Farmacología Clínica — Antimicrobianos','UYU 300')">
+        <div class="shop-thumb shop-thumb-2">💊</div>
+        <div class="shop-body">
+          <span class="shop-badge">Nuevo</span>
+          <h3 class="shop-title">Farmacología Clínica — Antimicrobianos</h3>
+          <p class="shop-desc">45 páginas. Tablas comparativas, mecanismos de resistencia y cobertura antibiótica.</p>
+          <div class="shop-footer"><div class="shop-price">$300 <span>UYU</span></div><button class="btn-buy">Comprar</button></div>
+        </div>
+      </div>
+      <div class="shop-card" onclick="openModal('Neurología para el examen','UYU 200')">
+        <div class="shop-thumb shop-thumb-3">🧠</div>
+        <div class="shop-body">
+          <span class="shop-badge">Popular</span>
+          <h3 class="shop-title">Neurología para el examen</h3>
+          <p class="shop-desc">30 páginas. ACV, epilepsia, Parkinson y diagnóstico diferencial de coma.</p>
+          <div class="shop-footer"><div class="shop-price">$200 <span>UYU</span></div><button class="btn-buy">Comprar</button></div>
+        </div>
+      </div>
+      <div class="shop-card" onclick="openModal('Pack Completo Año 5','UYU 700')">
+        <div class="shop-thumb shop-thumb-4">📦</div>
+        <div class="shop-body">
+          <span class="shop-badge">Mejor valor</span>
+          <h3 class="shop-title">Pack Completo Año 5</h3>
+          <p class="shop-desc">Todos los resúmenes actuales en un solo pack con descuento especial.</p>
+          <div class="shop-footer"><div class="shop-price">$700 <span>UYU</span></div><button class="btn-buy">Comprar</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre-mi">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-avatar">👨‍⚕️</div>
+      <div class="about-text">
+        <p class="section-tag">Quién soy</p>
+        <h2 class="section-title">Estudiante de medicina, como vos</h2>
+        <p>Estoy en quinto año de la carrera de Doctor en Medicina en Uruguay. Medifácil nació de la frustración de buscar materiales claros y no encontrarlos — así que decidí crearlos yo mismo.</p>
+        <p>Cada artículo y resumen que publico viene de lo que estudié, repasé y pregunté en guardia. Sin lenguaje innecesario, con los conceptos que realmente necesitás.</p>
+        <div class="about-chips">
+          <span class="chip">Medicina Interna</span><span class="chip">Cardiología</span><span class="chip">Neurología</span><span class="chip">Farmacología</span><span class="chip">Semiología</span><span class="chip">Universidad de la República</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter">
+  <h2>No te pierdas ningún resumen nuevo</h2>
+  <p>Suscribite y avisamos cuando publicamos material nuevo. Sin spam, solo medicina.</p>
+  <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+    <input class="newsletter-input" type="email" placeholder="tu@correo.com" required />
+    <button class="newsletter-btn" type="submit">Suscribirme</button>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Medi<span>fácil</span></div>
+      <p class="footer-desc">Recursos médicos para estudiantes uruguayos, escritos por alguien que también está estudiando.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contenido</h4>
+      <ul>
+        <li><a href="#articulos">Artículos</a></li>
+        <li><a href="#tienda">Tienda</a></li>
+        <li><a href="#">Política de privacidad</a></li>
+        <li><a href="#">Términos de uso</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Twitter / X</a></li>
+        <li><a href="mailto:hola@medifacil.uy">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Medifácil. Todos los derechos reservados.</span>
+    <div class="footer-disclaimer">⚠️ El contenido de este sitio tiene fines educativos y no reemplaza el criterio médico profesional.</div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3 id="modal-title">Resumen</h3>
+    <p id="modal-desc">Descargá este resumen en formato PDF inmediatamente después del pago.</p>
+    <div class="modal-price-box">
+      <span class="modal-price-label">Precio</span>
+      <span class="modal-price-val" id="modal-price">$250 UYU</span>
+    </div>
+    <button class="modal-btn" onclick="handlePurchase()">💳 Continuar con el pago (MercadoPago / Abitab)</button>
+  </div>
+</div>
+
+<script>
+  function openModal(title, price) { document.getElementById('modal-title').textContent = title; document.getElementById('modal-price').textContent = price; document.getElementById('modal').classList.add('open'); }
+  function closeModal() { document.getElementById('modal').classList.remove('open'); }
+  function closeModalOutside(e) { if (e.target === document.getElementById('modal')) closeModal(); }
+  function handlePurchase() { alert('¡Conectá tu pasarela de pago aquí! (MercadoPago, PayPal, Stripe, etc.)'); }
+  function handleNewsletter(e) { e.preventDefault(); const input = e.target.querySelector('input'); alert('✅ ¡Gracias! Te avisamos en ' + input.value + ' cuando haya material nuevo.'); input.value = ''; }
+  const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.1 });
+  document.querySelectorAll('.article-card, .shop-card').forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity .5s ease, transform .5s ease'; observer.observe(el); });
+</script>
+</body>
+</html>

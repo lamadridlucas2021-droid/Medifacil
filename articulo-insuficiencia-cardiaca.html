@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insuficiencia cardíaca: del fisiopatología al tratamiento — Medifácil</title>
+  <meta name="description" content="Entendé los mecanismos compensatorios del corazón fallido y por qué los IECA son la piedra angular del tratamiento." />
+
+  <!-- Google AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy:     #0d1f3c;
+      --navy-mid: #162d52;
+      --teal:     #0f7c6e;
+      --teal-lt:  #13a492;
+      --gold:     #c9a84c;
+      --cream:    #f7f3ee;
+      --paper:    #fdfaf6;
+      --ink:      #1a1a2e;
+      --muted:    #6b7280;
+      --border:   #e2d9ce;
+      --shadow:   rgba(13,31,60,.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Serif 4', Georgia, serif; background: var(--paper); color: var(--ink); line-height: 1.8; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    header { position: sticky; top: 0; z-index: 100; background: var(--navy); border-bottom: 3px solid var(--gold); padding: 0 2rem; }
+    nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 900; color: #fff; letter-spacing: -.5px; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: 'JetBrains Mono', monospace; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.75); transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--teal); color: #fff !important; padding: .45rem 1.1rem; border-radius: 4px; }
+
+    /* ARTICLE HERO */
+    .article-hero {
+      background: var(--navy);
+      padding: 4rem 2rem 3rem;
+      position: relative; overflow: hidden;
+    }
+    .article-hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+    .article-hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+    .breadcrumb { font-family: 'JetBrains Mono', monospace; font-size: .7rem; letter-spacing: .08em; color: rgba(255,255,255,.45); margin-bottom: 1.2rem; }
+    .breadcrumb a { color: var(--teal-lt); }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .article-cat { display: inline-block; background: var(--gold); color: var(--navy); font-family: 'JetBrains Mono', monospace; font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 3px; margin-bottom: 1.2rem; font-weight: 500; }
+    .article-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: 1rem; }
+    .article-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: rgba(255,255,255,.5); letter-spacing: .06em; }
+    .article-meta span { display: flex; align-items: center; gap: .4rem; }
+
+    /* LAYOUT */
+    .article-layout { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: start; }
+    .article-main { min-width: 0; }
+    .article-sidebar { position: sticky; top: 90px; }
+
+    /* TABLE OF CONTENTS */
+    .toc {
+      background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--teal);
+      border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;
+    }
+    .toc-title { font-family: 'JetBrains Mono', monospace; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; font-weight: 500; }
+    .toc ol { padding-left: 1.2rem; display: flex; flex-direction: column; gap: .4rem; }
+    .toc a { font-size: .9rem; color: var(--muted); transition: color .2s; }
+    .toc a:hover { color: var(--teal); }
+    .toc a.active { color: var(--teal); font-weight: 600; }
+
+    /* ADSENSE SIDEBAR */
+    .sidebar-ad { background: var(--cream); border: 2px dashed var(--border); border-radius: 8px; height: 250px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: .65rem; color: var(--muted); letter-spacing: .05em; text-align: center; padding: 1rem; margin-bottom: 2rem; }
+
+    /* ARTICLE CONTENT */
+    .article-content { font-size: 1.05rem; font-weight: 400; }
+    .article-content h2 { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--navy); }
+    .article-content h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; margin: 1.8rem 0 .8rem; color: var(--ink); }
+    .article-content p { margin-bottom: 1.2rem; }
+    .article-content ul, .article-content ol { padding-left: 1.5rem; margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: .4rem; }
+    .article-content li { line-height: 1.7; }
+    .article-content strong { color: var(--navy); font-weight: 600; }
+    .article-content em { font-style: italic; color: var(--muted); }
+
+    /* Callout boxes */
+    .callout { border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1.8rem 0; border-left: 4px solid; }
+    .callout-key { background: rgba(15,124,110,.07); border-color: var(--teal); }
+    .callout-warning { background: rgba(201,168,76,.08); border-color: var(--gold); }
+    .callout-danger { background: rgba(220,38,38,.06); border-color: #dc2626; }
+    .callout-title { font-family: 'JetBrains Mono', monospace; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; margin-bottom: .5rem; }
+    .callout-key .callout-title { color: var(--teal); }
+    .callout-warning .callout-title { color: #a07820; }
+    .callout-danger .callout-title { color: #dc2626; }
+    .callout p { margin: 0; font-size: .95rem; }
+
+    /* Table */
+    .article-table { width: 100%; border-collapse: collapse; margin: 1.8rem 0; font-size: .9rem; }
+    .article-table th { background: var(--navy); color: #fff; padding: .7rem 1rem; text-align: left; font-family: 'JetBrains Mono', monospace; font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
+    .article-table td { padding: .7rem 1rem; border-bottom: 1px solid var(--border); }
+    .article-table tr:nth-child(even) td { background: var(--cream); }
+
+    /* In-content AdSense */
+    .adsense-in-content { background: var(--cream); border: 2px dashed var(--border); border-radius: 8px; height: 90px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: .68rem; color: var(--muted); margin: 2.5rem 0; }
+
+    /* REFERENCES */
+    .references { background: var(--cream); border: 1px solid var(--border); border-radius: 8px; padding: 1.8rem; margin-top: 3rem; }
+    .references h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1rem; }
+    .references ol { padding-left: 1.4rem; display: flex; flex-direction: column; gap: .6rem; }
+    .references li { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+    .references li cite { font-style: italic; }
+
+    /* AUTHOR BOX */
+    .author-box { background: var(--navy); color: #fff; border-radius: 10px; padding: 1.8rem; margin-top: 2.5rem; display: flex; gap: 1.5rem; align-items: center; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; border: 2px solid var(--gold); }
+    .author-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: .2rem; }
+    .author-bio { font-size: .85rem; color: rgba(255,255,255,.65); font-weight: 300; line-height: 1.6; }
+
+    /* FOOTER */
+    footer { background: #080e1c; color: rgba(255,255,255,.45); padding: 2.5rem 2rem; font-size: .85rem; margin-top: 4rem; }
+    .footer-bottom-simple { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; color: #fff; }
+    .footer-logo span { color: var(--gold); }
+    .footer-disclaimer { font-family: 'JetBrains Mono', monospace; font-size: .62rem; background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.2); color: rgba(201,168,76,.7); padding: .4rem .8rem; border-radius: 4px; }
+
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-sidebar { position: static; }
+    }
+    @media (max-width: 600px) {
+      .nav-links li:not(:last-child) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">Medi<span>fácil</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#articulos">Artículos</a></li>
+      <li><a href="index.html#tienda">Tienda</a></li>
+      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="index.html#newsletter" class="nav-cta">Suscribirse</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Inicio</a> › <a href="index.html#articulos">Artículos</a> › Cardiología</p>
+    <span class="article-cat">Cardiología</span>
+    <h1>Insuficiencia cardíaca: del fisiopatología al tratamiento</h1>
+    <div class="article-meta">
+      <span>📅 12 de marzo de 2026</span>
+      <span>⏱ 8 min de lectura</span>
+      <span>🏥 Medicina Interna</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-layout">
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="article-main">
+    <div class="article-content">
+
+      <p>La insuficiencia cardíaca (IC) es un síndrome clínico en el que el corazón no puede bombear suficiente sangre para satisfacer las demandas metabólicas del organismo, o solo puede hacerlo a expensas de presiones de llenado elevadas. Afecta a más del 2% de la población adulta y su prevalencia aumenta exponencialmente con la edad.</p>
+
+      <h2 id="fisiopatologia">1. Fisiopatología</h2>
+      <p>El evento desencadenante (infarto, hipertensión crónica, valvulopatía) genera una caída del gasto cardíaco. Ante esta situación, el organismo pone en marcha mecanismos compensadores:</p>
+      <ul>
+        <li><strong>Mecanismo de Frank-Starling:</strong> el aumento del volumen diastólico final estira las fibras miocárdicas y mejora transitoriamente la fuerza de contracción.</li>
+        <li><strong>Activación neurohormonal:</strong> el sistema nervioso simpático y el eje renina-angiotensina-aldosterona (SRAA) intentan mantener la presión arterial y la perfusión tisular.</li>
+        <li><strong>Remodelado ventricular:</strong> hipertrofia, dilatación y cambios en la geometría del ventrículo izquierdo que inicialmente compensan pero a largo plazo son deletéreos.</li>
+      </ul>
+
+      <div class="callout callout-key">
+        <p class="callout-title">🔑 Concepto clave</p>
+        <p>Los mecanismos compensadores son la causa de muchos síntomas de la IC: la retención de sodio y agua (por aldosterona) genera el edema y la disnea; la taquicardia simpática genera palpitaciones y fatiga.</p>
+      </div>
+
+      <h2 id="clasificacion">2. Clasificación</h2>
+      <p>La IC se clasifica según la fracción de eyección del ventrículo izquierdo (FEVI), medida por ecocardiografía:</p>
+
+      <table class="article-table">
+        <thead>
+          <tr><th>Tipo</th><th>FEVI</th><th>Fisiopatología predominante</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>IC con FEVI reducida (ICFEr)</strong></td><td>&lt; 40%</td><td>Disfunción sistólica</td></tr>
+          <tr><td><strong>IC con FEVI levemente reducida</strong></td><td>40–49%</td><td>Mixta</td></tr>
+          <tr><td><strong>IC con FEVI preservada (ICFEp)</strong></td><td>≥ 50%</td><td>Disfunción diastólica</td></tr>
+        </tbody>
+      </table>
+
+      <p>La clasificación funcional de la NYHA (I–IV) cuantifica la limitación clínica y es fundamental para definir el tratamiento y el pronóstico.</p>
+
+      <!-- AdSense in-content -->
+      <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+      <div class="adsense-in-content">ESPACIO PUBLICITARIO — Google AdSense (in-article)</div>
+
+      <h2 id="diagnostico">3. Diagnóstico</h2>
+      <p>El diagnóstico se basa en la clínica, biomarcadores y imagen:</p>
+      <ul>
+        <li><strong>Clínica:</strong> disnea de esfuerzo progresiva, ortopnea, disnea paroxística nocturna, edemas maleolares, fatiga.</li>
+        <li><strong>BNP / NT-proBNP:</strong> péptidos natriuréticos elevados. Un NT-proBNP &lt; 125 pg/mL prácticamente descarta IC crónica.</li>
+        <li><strong>Ecocardiograma transtorácico:</strong> estudio de elección. Determina la FEVI, la función diastólica y la etiología.</li>
+        <li><strong>Rx de tórax:</strong> cardiomegalia, redistribución vascular hacia vértices, líneas B de Kerley.</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <p class="callout-title">⚠️ Para no olvidar</p>
+        <p>Los diuréticos mejoran los síntomas rápidamente, pero <strong>no modifican la mortalidad</strong>. Los fármacos que sí reducen la mortalidad en ICFEr son: IECA/ARA II, betabloqueantes, ARM y los iSGLT2.</p>
+      </div>
+
+      <h2 id="tratamiento">4. Tratamiento farmacológico de la ICFEr</h2>
+      <p>El pilar del tratamiento moderno se basa en cuatro familias farmacológicas ("los cuatro pilares"):</p>
+
+      <h3>IECA / ARA II / ARNI</h3>
+      <p>Inhiben el SRAA, reducen la postcarga y la precarga. Los IECA son de primera línea; el sacubitrilo-valsartán (ARNI) ha demostrado superioridad sobre el enalapril en el estudio PARADIGM-HF.</p>
+
+      <h3>Betabloqueantes</h3>
+      <p>Carvedilol, bisoprolol y metoprolol succinato son los únicos con evidencia de reducción de mortalidad. Se inician con dosis bajas en fase estable (no en descompensación aguda).</p>
+
+      <h3>Antagonistas del receptor de mineralocorticoides (ARM)</h3>
+      <p>Espironolactona o eplerenona. Reducen la fibrosis miocárdica y la mortalidad. Monitorear potasio y función renal.</p>
+
+      <h3>Inhibidores de SGLT2 (iSGLT2)</h3>
+      <p>Dapagliflozina y empagliflozina han demostrado reducir hospitalizaciones y mortalidad cardiovascular independientemente de si el paciente tiene diabetes. Son el gran avance de la última década.</p>
+
+      <div class="callout callout-danger">
+        <p class="callout-title">🚨 Contraindicación importante</p>
+        <p>Los IECA están <strong>contraindicados en el embarazo</strong> (teratogénicos, categoría D). En mujeres en edad fértil con IC, considerar ARA II o hidralazina + nitratos.</p>
+      </div>
+
+      <h2 id="descompensacion">5. IC descompensada aguda</h2>
+      <p>La descompensación aguda requiere manejo hospitalario urgente:</p>
+      <ol>
+        <li><strong>Posición:</strong> sentado con piernas colgando para reducir retorno venoso.</li>
+        <li><strong>Oxigenoterapia:</strong> objetivo SpO₂ &gt; 94%. Valorar VNI precozmente.</li>
+        <li><strong>Diuréticos IV:</strong> furosemida en bolo EV. La dosis IV equivale al doble de la dosis oral habitual.</li>
+        <li><strong>Vasodilatadores:</strong> nitroglicerina EV si hipertensión asociada.</li>
+        <li><strong>Inotrópicos:</strong> dobutamina en bajo gasto severo. Solo como puente.</li>
+      </ol>
+
+    </div>
+
+    <!-- REFERENCIAS -->
+    <div class="references">
+      <h2>Referencias bibliográficas</h2>
+      <ol>
+        <li>McDonagh TA, et al. <cite>2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure.</cite> Eur Heart J. 2021;42(36):3599–3726.</li>
+        <li>McMurray JJV, et al. <cite>Angiotensin–neprilysin inhibition versus enalapril in heart failure (PARADIGM-HF).</cite> N Engl J Med. 2014;371:993–1004.</li>
+        <li>McMurray JJV, et al. <cite>Dapagliflozin in patients with heart failure and reduced ejection fraction (DAPA-HF).</cite> N Engl J Med. 2019;381:1995–2008.</li>
+        <li>Yancy CW, et al. <cite>2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.</cite> J Am Coll Cardiol. 2022;79(17):e263–e421.</li>
+        <li>Pitt B, et al. <cite>The effect of spironolactone on morbidity and mortality in patients with severe heart failure (RALES).</cite> N Engl J Med. 1999;341:709–717.</li>
+      </ol>
+    </div>
+
+    <!-- AUTOR -->
+    <div class="author-box">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div>
+        <div class="author-name">Autor — Estudiante de Medicina, 5° año</div>
+        <p class="author-bio">Universidad de la República, Uruguay. Escribo sobre medicina clínica con el lenguaje que me hubiera gustado encontrar cuando empecé a estudiar. Si encontrás algún error o querés sugerir un tema, escribime.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="article-sidebar">
+    <!-- AdSense sidebar -->
+    <!-- <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    <div class="sidebar-ad">ESPACIO PUBLICITARIO<br>Google AdSense<br>300×250</div>
+
+    <!-- Tabla de contenidos -->
+    <div class="toc">
+      <p class="toc-title">Tabla de contenidos</p>
+      <ol>
+        <li><a href="#fisiopatologia">Fisiopatología</a></li>
+        <li><a href="#clasificacion">Clasificación</a></li>
+        <li><a href="#diagnostico">Diagnóstico</a></li>
+        <li><a href="#tratamiento">Tratamiento farmacológico</a></li>
+        <li><a href="#descompensacion">IC descompensada aguda</a></li>
+      </ol>
+    </div>
+
+    <!-- AdSense sidebar 2 -->
+    <!-- <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    <div class="sidebar-ad">ESPACIO PUBLICITARIO<br>Google AdSense<br>300×250</div>
+  </aside>
+
+</div>
+
+<footer>
+  <div class="footer-bottom-simple">
+    <a href="index.html" class="footer-logo">Medi<span>fácil</span></a>
+    <div class="footer-disclaimer">⚠️ Contenido educativo — no reemplaza criterio médico profesional</div>
+    <span>© 2026 Medifácil</span>
+  </div>
+</footer>
+
+<script>
+  // Highlight active TOC item on scroll
+  const headings = document.querySelectorAll('.article-content h2');
+  const tocLinks = document.querySelectorAll('.toc a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    headings.forEach(h => { if (window.scrollY >= h.offsetTop - 120) current = h.id; });
+    tocLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+  });
+</script>
+
+</body>
+</html>
